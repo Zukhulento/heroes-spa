@@ -15,9 +15,10 @@ export const HeroesRoutes = () => {
           <Route path="/marvel" element={<MarvelPage />} />
           <Route path="/dc" element={<DCPage />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/hero" element={<HeroePage />} />
-          {/* En caso de poner otra cosa se envía a Marvel */}
-          <Route path="/*" element={<Navigate to="/marvel" />} />
+          {/* Este tipo de path es para cuando se hagan las busquedas */}
+          {/* utiliza un hook para acceder al valor de la URL */}
+          <Route path="/hero/:id" element={<HeroePage />} />
+          <Route path="/" element={<Navigate to="/marvel" />} />
         </Routes>
       </div>
     </>

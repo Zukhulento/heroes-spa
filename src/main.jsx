@@ -13,3 +13,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// Ruta para bash
+// Documents/Workspace/Courses/React/ejercicios/07-heroes-spa/
