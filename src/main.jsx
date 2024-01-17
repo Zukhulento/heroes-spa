@@ -6,7 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* Se agrega BrowserRouter a toda la app */}
     <BrowserRouter>
+      {/* Se renderiza la app principal */}
       <HeroesApp />
     </BrowserRouter>
   </React.StrictMode>
