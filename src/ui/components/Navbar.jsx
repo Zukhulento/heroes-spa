@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../auth/context/AuthContext";
 
 export const Navbar = () => {
   // ! Este es un custom hook "useNavigate"
   const navigate = useNavigate();
-  const onLogOut = () => {
+  // Obteniendo datos del context
+  const { user, onLogout } = useContext(AuthContext);
+  const LogOut = () => {
+    // Se llama a la función onLogOut
+    onLogout();
     // Se le pasa como parametro la ruta a donde se redirije y el replace para que no pueda volver con flecha
     navigate("/login", { replace: true });
   };
@@ -45,10 +51,10 @@ export const Navbar = () => {
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
         <ul className="navbar-nav ml-auto">
-          <span className="nav-item nav-link text-info">Luis Matus</span>
+          <span className="nav-item nav-link text-info">{user?.name}</span>
           <button
             className=" nav-item nav-link btn btn-outline-secondary"
-            onClick={onLogOut}
+            onClick={LogOut}
           >
             Salir
           </button>
